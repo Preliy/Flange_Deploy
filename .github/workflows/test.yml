@@ -32,8 +32,8 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectPath: ./copiedProject/EasyAccessibilityPackage
-          unityVersion: "2020.3.0f1"
-          testMode: all
+          projectPath: ./copiedProject/Flange_Deploy
+          unityVersion: ${{ inputs.unityVersion }}
+          testMode: ${{ inputs.testMode }}
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+trudeaua.EasyAccessibility.*,-*Tests*'
           packageMode: true

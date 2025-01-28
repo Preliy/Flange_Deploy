@@ -38,4 +38,3 @@ jobs:
           projectPath: ./copiedProject/Flange_Deploy
           unityVersion: ${{ inputs.unityVersion }}
           testMode: ${{ inputs.testMode }}
-          artifactsPath: ${{ inputs.testMode }}-artifacts

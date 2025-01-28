@@ -27,13 +27,15 @@ jobs:
 
       - name: Run tests
         id: runTests
-        uses: trudeaua21/unity-test-runner@main
+        uses: game-ci/unity-test-runner@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
+          packageMode: true
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           projectPath: ./copiedProject/Flange_Deploy
           unityVersion: ${{ inputs.unityVersion }}
           testMode: ${{ inputs.testMode }}
-          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+trudeaua.EasyAccessibility.*,-*Tests*'
-          packageMode: true
+          artifactsPath: ${{ inputs.testMode }}-artifacts

@@ -11,7 +11,7 @@ jobs:
     name: Test Unity Project
     uses: ./.github/workflows/test.yml
     with:
-      unityVersion: "2022.3.46f1" 
+      unityVersion: "2022.3.56f1" 
       testMode: "all"
   
   build:
